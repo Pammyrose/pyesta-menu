@@ -20,65 +20,44 @@
         }
 
         img {
-            height: 50%;
-            width: 130vh;
-            margin: 20px;
+
             cursor: pointer;
         }
 
+        .mobile img {
+            width: 100%;
+            /* Adjust the width for mobile */
+            max-width: 400px;
+            /* Optional: Limit the maximum width */
+            margin: 3px auto;
+            /* Center the image and add spacing */
+            display: block;
+        }
+
         @media only screen and (max-width: 767px) {
-            img {
-                width: 70%;
-                left: 3px;
+            .text-center {
+                display: none;
+                /* Hide on mobile devices */
             }
 
-            /* Custom style to center the modal content */
-            #imageModal .modal-content {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background: transparent;
-                border: none;
-                box-shadow: none;
-                margin-left: -12px;
-            }
-
-            /* Adjusted styles for the carousel */
-            #imageModal .carousel-inner {
-                height: auto;
-                /* Set height to auto for mobile screens */
-                width: 100%;
-                max-width: 100%;
-                /* Ensure the width doesn't exceed the screen width */
-
-            }
-
-            #imageModal .carousel-inner img {
-                width: 100%;
-                height: auto;
-                /* Set height to auto for responsive scaling */
-
-            }
-
-            /* Adjusted styles for carousel controls on small screens */
-            #imageModal .carousel-control-prev,
-            #imageModal .carousel-control-next {
-                top: 5%;
-            }
-
-            .carousel-control-next {
-                right: -21px;
+            .mobile {
+                display: block;
+                /* Show on mobile devices */
+                text-align: center;
+                /* Center images in the container */
             }
         }
 
-        /* Custom style to center the modal content */
-        .modal-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: transparent;
-            border: none;
-            box-shadow: none;
+        @media only screen and (min-width: 768px) {
+            .text-center {
+                display: block;
+                /* Show on larger devices */
+            }
+
+            .mobile {
+                display: none;
+                /* Hide on larger devices */
+            }
         }
     </style>
 </head>
@@ -86,66 +65,47 @@
 <body>
     <div id="qrcode"></div>
     <div class="text-center">
-        <img src="1.png" alt="" onclick="showImage('1.png')" data-toggle="modal" data-target="#imageModal">
-        <img src="2.png" alt="" onclick="showImage('2.png')" data-toggle="modal" data-target="#imageModal">
-        <img src="3.png" alt="" onclick="showImage('3.png')" data-toggle="modal" data-target="#imageModal">
-        <img src="4.png" alt="" onclick="showImage('4.png')" data-toggle="modal" data-target="#imageModal">
-        <img src="5.png" alt="" onclick="showImage('5.png')" data-toggle="modal" data-target="#imageModal">
-        <img src="6.png" alt="" onclick="showImage('6.png')" data-toggle="modal" data-target="#imageModal">
-        <img src="7.png" alt="" onclick="showImage('7.png')" data-toggle="modal" data-target="#imageModal">
-        <img src="8.png" alt="" onclick="showImage('8.png')" data-toggle="modal" data-target="#imageModal">
+        <img src="1.jpg" alt="" onclick="('1.jpg')" data-target="#imageModal">
+        <img src="2.jpg" alt="" onclick="('2.jpg')" data-target="#imageModal">
+        <img src="3.jpg" alt="" onclick="('3.jpg')" data-target="#imageModal">
+        <img src="4.jpg" alt="" onclick="('4.jpg')" data-target="#imageModal">
+        <img src="5.jpg" alt="" onclick="('5.jpg')" data-target="#imageModal">
+        <img src="6.jpg" alt="" onclick="('6.jpg')" data-target="#imageModal">
+        <img src="7.jpg" alt="" onclick="('7.jpg')" data-target="#imageModal">
+        <img src="8.jpg" alt="" onclick="('8.jpg')" data-target="#imageModal">
+        <img src="9.jpg" alt="" onclick="('9.jpg')" data-target="#imageModal">
+
         <!-- Add similar lines for other images -->
     </div>
 
-    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="1.png" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="2.png" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="3.png" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="4.png" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="5.png" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="6.png" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="7.png" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="8.png" class="d-block" alt="...">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="mobile">
+        <img src="1_l.jpg" alt="">
+        <img src="2_l.jpg" alt="" onclick="('2_l.jpg')" data-target="#imageModal">
+        <img src="3_l.jpg" alt="" onclick="('3_l.jpg')" data-target="#imageModal">
+        <img src="4_l.jpg" alt="" onclick="('4_l.jpg')" data-target="#imageModal">
+        <img src="5_l.jpg" alt="" onclick="('5_l.jpg')" data-target="#imageModal">
+        <img src="6_l.jpg" alt="" onclick="('6_l.jpg')" data-target="#imageModal">
+        <img src="7_l.jpg" alt="" onclick="('7_l.jpg')" data-target="#imageModal">
+        <img src="8_l.jpg" alt="" onclick="('8_l.jpg')" data-target="#imageModal">
+        <img src="9_l.jpg" alt="" onclick="('9_l.jpg')" data-target="#imageModal">
+        <img src="10_l.jpg" alt="" onclick="('10_l.jpg')" data-target="#imageModal">
+        <img src="11_l.jpg" alt="" onclick="('11_l.jpg')" data-target="#imageModal">
+        <img src="12_l.jpg" alt="" onclick="('12_l.jpg')" data-target="#imageModal">
+        <img src="13_l.jpg" alt="" onclick="('13_l.jpg')" data-target="#imageModal">
+        <img src="14_l.jpg" alt="" onclick="('14_l.jpg')" data-target="#imageModal">
+        <img src="15_l.jpg" alt="" onclick="('15_l.jpg')" data-target="#imageModal">
+        <img src="16_l.jpg" alt="" onclick="('16_l.jpg')" data-target="#imageModal">
+        <img src="18_l.jpg" alt="" onclick="('18_l.jpg')" data-target="#imageModal">
+        <img src="17_l.jpg" alt="" onclick="('17_l.jpg')" data-target="#imageModal">
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <script>
-        function showImage(imageSrc) {
+        function(imageSrc) {
             // Set the source of the modal image
             document.getElementById('modalImage').src = imageSrc;
         }
